@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="display-4" th:text="${isEdit ? 'Editar Tarea' : 'Registrar Tarea'}"></h1>
+    </div>
+    <form th:action="@{${isEdit ? '/tasks/update' : '/tasks/create'}}" method="post">
+        <input type="hidden" name="id" th:value="${task.id}" />
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" class="form-control" th:value="${task.name}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" class="form-control" rows="3" required th:text="${task.description}"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="startDate">Fecha de Inicio:</label>
+            <input type="date" id="startDate" name="startDate" class="form-control" th:value="${#dates.format(task.startDate, 'yyyy-MM-dd')}" required>
+        </div>
+        <button type="submit" class="btn btn-custom" th:text="${isEdit ? 'Actualizar Tarea' : 'Guardar Tarea'}"></button>
+        <a href="/" class="btn btn-custom">Volver</a>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+</body>
+</html>

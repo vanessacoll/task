@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.example.tasks.mappers.TaskMapper">
+    <insert id="insertTask" parameterType="com.example.tasks.models.Task">
+        INSERT INTO tasks(name, description, start_date)
+        VALUES(#{name}, #{description}, #{startDate})
+    </insert>
+
+    <select id="getTaskById" parameterType="int" resultType="com.example.tasks.models.Task">
+        SELECT id, name, description, start_date AS startDate
+        FROM tasks
+        WHERE id = #{id}
+    </select>
+
+    <select id="getAllTasks" resultType="com.example.tasks.models.Task">
+        SELECT id, name, description, start_date AS startDate FROM tasks
+    </select>
+
+    <update id="updateTask" parameterType="com.example.tasks.models.Task">
+        UPDATE tasks
+        SET name = #{name}, description = #{description}, start_date = #{startDate}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteTask" parameterType="int">
+        DELETE FROM tasks WHERE id = #{id}
+    </delete>
+</mapper>

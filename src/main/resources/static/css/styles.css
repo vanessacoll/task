@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(to right, rgba(255, 204, 204, 0.7), rgba(204, 255, 255, 0.7)); /* Gradiente suave */
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    background-color: #ffffff; /* Fondo blanco del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+    padding: 40px;
+    max-width: 600px;
+    text-align: center;
+}
+.btn-custom {
+    background-color: rgba(0, 123, 255, 0.8); /* Fondo azul opaco */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    text-decoration: none; /* Elimina subrayado */
+    display: inline-block;
+}
+.btn-custom:hover {
+    background-color: rgba(0, 123, 255, 1); /* Fondo azul completo al pasar el ratón */
+    text-decoration: none;
+}
+.header {
+    margin-bottom: 30px;
+}
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.form-control {
+    border-radius: 5px;
+}
